@@ -7,7 +7,7 @@ from unzip import unzip
 # dataset = 'fer2013'
 dataset = 'mma'
 
-# unzip(dataset)
+unzip(dataset)
 
 # Define the directories
 data_dir = f'data/{dataset}/'
