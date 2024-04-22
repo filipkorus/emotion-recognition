@@ -11,8 +11,8 @@ def resize_image(input_path, output_path, size=(48, 48)):
 
 def merge_datasets(dataset_dirs, output_dir):
     # Ensure output directory exists
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
+    if not os.path.exists('input/' + output_dir):
+        os.makedirs('input/' + output_dir)
 
     # Loop through each dataset directory
     for dataset_dir in dataset_dirs:
