@@ -76,4 +76,4 @@ for dataset in datasets:
     # Display the total number of images
     print(f"Total number of images: {total_images}")
 
-    print("{dataset} splitting completed!")
+    print(f"{dataset} splitting completed!")
