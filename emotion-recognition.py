@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.preprocessing import LabelEncoder
 from tensorflow.keras.models import load_model
 
-model = load_model('models/6-layer_fer2013.keras')
+model = load_model('models/5-layer_merged_dataset.keras')
 
 print_propabilities = False
 
