@@ -4,9 +4,6 @@ from PIL import Image
 import numpy as np
 import random
 
-# Ścieżka do folderu zawierającego podfoldery train, valid i test
-dataset_path = 'input/merged_dataset2'
-
 # Funkcja do przetwarzania obrazów w podfolderze i zastosowania augmentacji danych
 def augment_images_in_folder(folder_path, target_num_images):
     # Lista nazw plików w folderze
@@ -44,6 +41,8 @@ def augment_images_in_folder(folder_path, target_num_images):
 
 
 if __name__ == '__main__':
+    dataset_path = 'input/merged_dataset_2'
+
     labels = os.listdir(os.path.join(dataset_path, 'train'))
 
     folders_and_target_numbers_of_imgs = [
