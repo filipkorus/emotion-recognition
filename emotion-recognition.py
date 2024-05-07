@@ -8,7 +8,7 @@ model = load_model('models/5-layer_merged_dataset.keras')
 print_propabilities = False
 
 # Label encoder
-labels = ['neutral', 'sad', 'happy', 'surprise', 'angry', 'fear', 'disgust']
+labels = ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
 le = LabelEncoder()
 le.fit(labels)
 
