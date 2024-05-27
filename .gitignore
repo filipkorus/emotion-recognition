@@ -7,3 +7,5 @@ input
 notes.txt
 *.keras
 plots
+archive
+__*

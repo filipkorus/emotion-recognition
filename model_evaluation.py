@@ -48,17 +48,29 @@ models_folder = 'models'
 
 # Słownik mapujący nazwy modeli na foldery z danymi testowymi
 model_to_data_folder = {
-    '5-layer_affectnet.keras': 'input/affectnet',
-    '5-layer_affectnet_balanced.keras':'input/affectnet_balanced',
-	'5-layer_fer2013.keras':'input/fer2013',
-	'5-layer_fer2013_balanced.keras':'input/fer2013_balanced',
-	'5-layer_merged_dataset.keras':'input/merged_dataset',
-	'5-layer_merged_dataset_balanced.keras':'input/merged_dataset_balanced',
-	'5-layer_mma.keras':'input/mma',
-	'5-layer_mma_balanced.keras':'input/mma_balanced',
-	'5-layer_fer2013_balanced.keras':'input/merged_dataset',
-	'5-layer_affectnet_balanced.keras':'input/merged_dataset',
-	'5-layer_mma_balanced.keras':'input/merged_dataset',
+    # '5-layer_affectnet.keras': 'input/affectnet',
+    # '5-layer_affectnet_balanced.keras':'input/affectnet_balanced',
+	# '5-layer_fer2013.keras':'input/fer2013',
+	# '5-layer_fer2013_balanced.keras':'input/fer2013_balanced',
+	# '5-layer_merged_dataset.keras':'input/merged_dataset',
+	# '5-layer_merged_dataset_balanced.keras':'input/merged_dataset_balanced',
+	# '5-layer_mma.keras':'input/mma',
+	# '5-layer_mma_balanced.keras':'input/mma_balanced',
+	# '5-layer_fer2013_balanced.keras':'input/merged_dataset',
+	# '5-layer_affectnet_balanced.keras':'input/merged_dataset',
+	# '5-layer_mma_balanced.keras':'input/merged_dataset',
+
+    '5-layer_balanced_filtered_FER2013.keras': 'input/balanced_filtered_FER2013',
+    '5-layer_balanced_filtered_FER2013.keras': 'input/merged_dataset',
+
+    'YT_1_balanced_filtered_FER2013.keras': 'input/balanced_filtered_FER2013',
+    'YT_1_balanced_filtered_FER2013.keras': 'input/merged_dataset',
+
+    'YT_2_balanced_filtered_FER2013.keras': 'input/balanced_filtered_FER2013',
+    'YT_2_balanced_filtered_FER2013.keras': 'input/merged_dataset',
+
+    'YT_3_balanced_filtered_FER2013.keras': 'input/balanced_filtered_FER2013',
+    'YT_3_balanced_filtered_FER2013.keras': 'input/merged_dataset',
 
 	#'6-layer_fer2013.keras':'input/fer2013',
 	#'6-layer_mma.keras':'input/mma',
