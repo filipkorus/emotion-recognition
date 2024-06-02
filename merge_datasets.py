@@ -42,7 +42,7 @@ def merge_datasets(dataset_dirs, output_dir):
 
 if __name__ == '__main__':
     # Define dataset directories
-    dataset_dirs = ['fer2013', 'affectnet', 'mma']
+    dataset_dirs = ['balanced_filtered_FER2013', 'affectnet', 'mma']
 
     # Define output directory
     output_dir = 'merged_dataset'

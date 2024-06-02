@@ -1,42 +1,11 @@
 import os
 import numpy as np
 import pandas as pd
-from sklearn.metrics import classification_report, accuracy_score
+from sklearn.metrics import classification_report
 from tensorflow.keras.models import load_model
 from sklearn.preprocessing import LabelEncoder
 from tensorflow.keras.utils import to_categorical
-from keras.preprocessing.image import load_img
-
-def load_dataset(directory):
-    image_paths = []
-    labels = []
-
-    for label in os.listdir(directory):
-        for filename in os.listdir(directory+label):
-            image_path = os.path.join(directory, label, filename)
-            image_paths.append(image_path)
-            labels.append(label)
-
-        # print(label, "Completed")
-
-    return image_paths, labels
-
-
-def extract_features(images,downsample=False):
-    features = []
-    for image_path in images:
-        img = load_img(image_path, color_mode='grayscale')
-        img = np.array(img)
-
-        if downsample:  # affectnet images are 96x96
-            img = img[::2, ::2]  # so downsampling to 48x48 is required
-
-        features.append(img)
-
-    features = np.array(features)
-    features = features.reshape(len(features), 48, 48, 1)
-
-    return features
+from keras.src.legacy.preprocessing.image import ImageDataGenerator
 
 
 labels = ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
@@ -60,17 +29,19 @@ model_to_data_folder = {
 	# '5-layer_affectnet_balanced.keras':'input/merged_dataset',
 	# '5-layer_mma_balanced.keras':'input/merged_dataset',
 
-    '5-layer_balanced_filtered_FER2013.keras': 'input/balanced_filtered_FER2013',
-    '5-layer_balanced_filtered_FER2013.keras': 'input/merged_dataset',
+    # '5-layer_balanced_filtered_FER2013.keras': 'input/balanced_filtered_FER2013',
+    # '5-layer_balanced_filtered_FER2013.keras': 'input/merged_dataset',
 
-    'YT_1_balanced_filtered_FER2013.keras': 'input/balanced_filtered_FER2013',
-    'YT_1_balanced_filtered_FER2013.keras': 'input/merged_dataset',
+    # 'YT_1_balanced_filtered_FER2013.keras': 'input/balanced_filtered_FER2013',
+    # 'YT_1_balanced_filtered_FER2013.keras': 'input/merged_dataset',
 
-    'YT_2_balanced_filtered_FER2013.keras': 'input/balanced_filtered_FER2013',
-    'YT_2_balanced_filtered_FER2013.keras': 'input/merged_dataset',
+    # 'YT_2_balanced_filtered_FER2013.keras': 'input/balanced_filtered_FER2013',
+    # 'YT_2_balanced_filtered_FER2013.keras': 'input/merged_dataset',
 
-    'YT_3_balanced_filtered_FER2013.keras': 'input/balanced_filtered_FER2013',
-    'YT_3_balanced_filtered_FER2013.keras': 'input/merged_dataset',
+    # 'YT_3_balanced_filtered_FER2013.keras': 'input/balanced_filtered_FER2013',
+    # 'YT_3_balanced_filtered_FER2013.keras': 'input/merged_dataset',
+    
+    'YT_5_balanced_filtered_FER2013.keras': 'input/balanced_filtered_FER2013',
 
 	#'6-layer_fer2013.keras':'input/fer2013',
 	#'6-layer_mma.keras':'input/mma',
@@ -85,21 +56,31 @@ for model_name, data_folder in model_to_data_folder.items():
     model = load_model(model_path)
 
     TEST_DIR = f"{data_folder}/test/"
-    test = pd.DataFrame()
-    test['image'], test['label'] = load_dataset(TEST_DIR)
-    test = test.sample(frac=1).reset_index(drop=True)
+    test_datagen = ImageDataGenerator(rescale=1./255)
+    test_generator = test_datagen.flow_from_directory(
+        TEST_DIR,
+        color_mode='grayscale',
+        target_size=(48, 48),
+        batch_size=128,
+        class_mode='categorical',
+        shuffle=True
+    )
 
-    test_features = extract_features(test['image'],downsample='affectnet'in data_folder)
-    x_test = test_features / 255.0
+    x_test = []
+    y_test = []
 
-    y_test = le.transform(test['label'])
-    y_test = to_categorical(y_test, num_classes=len(labels))
+    for i in range(len(test_generator)):
+        x_batch, y_batch = test_generator[i]
+        x_test.extend(x_batch)
+        y_test.extend(np.argmax(y_batch, axis=1))
 
-    # Przewidywanie klas na zestawie testowym
-    y_pred_prob = model.predict(x_test,verbose=0)
-    y_pred = np.array([np.eye(len(row))[row.argmax()] for row in y_pred_prob])
+    x_test = np.array(x_test)
+    y_test = np.array(y_test)
+
+    y_pred_prob = model.predict(x_test)
+    y_pred = np.argmax(y_pred_prob, axis=1)
 
     # Wygenerowanie raportu klasyfikacji
-    report = classification_report(y_test, y_pred)
+    report = classification_report(y_test, y_pred, target_names=labels)
     print(f"\n\nClassification Report for model {model_name} for {data_folder.replace('input/','')}:")
     print(report)
