@@ -1,141 +1,167 @@
 Classification Report for model 5-layer_affectnet.keras for affectnet:
               precision    recall  f1-score   support
 
-           0       0.49      0.54      0.51       322
-           1       0.53      0.42      0.47       248
-           2       0.47      0.48      0.47       317
-           3       0.89      0.87      0.88       505
-           4       0.84      0.87      0.85       512
-           5       0.49      0.56      0.53       309
-           6       0.55      0.51      0.53       404
+       angry       0.57      0.55      0.56       322
+     disgust       0.50      0.50      0.50       248
+        fear       0.56      0.37      0.45       317
+       happy       0.88      0.90      0.89       505
+     neutral       0.86      0.85      0.86       512
+         sad       0.56      0.53      0.54       309
+    surprise       0.51      0.67      0.57       404
 
-   micro avg       0.65      0.65      0.65      2617
-   macro avg       0.61      0.61      0.61      2617
-weighted avg       0.65      0.65      0.65      2617
- samples avg       0.65      0.65      0.65      2617
-
-
-
-Classification Report for model 5-layer_affectnet_balanced.keras for merged_dataset:
-              precision    recall  f1-score   support
-
-           0       0.26      0.33      0.29      1680
-           1       0.09      0.36      0.14       757
-           2       0.22      0.26      0.24      1450
-           3       0.67      0.26      0.37      5356
-           4       0.54      0.30      0.39      5240
-           5       0.26      0.37      0.30      2580
-           6       0.26      0.45      0.33      1910
-
-   micro avg       0.32      0.32      0.32     18973
-   macro avg       0.33      0.33      0.29     18973
-weighted avg       0.44      0.32      0.34     18973
- samples avg       0.32      0.32      0.32     18973
-
-
-
-Classification Report for model 5-layer_fer2013.keras for fer2013:
-              precision    recall  f1-score   support
-
-           0       0.53      0.54      0.54       495
-           1       0.76      0.56      0.65        55
-           2       0.53      0.40      0.46       512
-           3       0.81      0.82      0.81       899
-           4       0.54      0.60      0.57       620
-           5       0.46      0.50      0.48       608
-           6       0.76      0.78      0.77       400
-
-   micro avg       0.62      0.62      0.62      3589
-   macro avg       0.63      0.60      0.61      3589
-weighted avg       0.62      0.62      0.62      3589
- samples avg       0.62      0.62      0.62      3589
-
-
-
-Classification Report for model 5-layer_fer2013_balanced.keras for merged_dataset:
-              precision    recall  f1-score   support
-
-           0       0.35      0.56      0.43      1680
-           1       0.67      0.11      0.19       757
-           2       0.44      0.47      0.45      1450
-           3       0.74      0.75      0.75      5356
-           4       0.57      0.40      0.47      5240
-           5       0.33      0.55      0.41      2580
-           6       0.74      0.47      0.57      1910
-
-   micro avg       0.53      0.53      0.53     18973
-   macro avg       0.55      0.47      0.47     18973
-weighted avg       0.58      0.53      0.53     18973
- samples avg       0.53      0.53      0.53     18973
+    accuracy                           0.67      2617
+   macro avg       0.63      0.62      0.62      2617
+weighted avg       0.67      0.67      0.66      2617
 
 
 
 Classification Report for model 5-layer_merged_dataset.keras for merged_dataset:
               precision    recall  f1-score   support
 
-           0       0.75      0.65      0.69      1680
-           1       0.55      0.28      0.37       757
-           2       0.77      0.67      0.72      1450
-           3       0.85      0.85      0.85      5356
-           4       0.68      0.83      0.75      5240
-           5       0.67      0.61      0.64      2580
-           6       0.72      0.67      0.69      1910
+       angry       0.62      0.62      0.62      1639
+     disgust       0.67      0.23      0.35       758
+        fear       0.61      0.47      0.53      1403
+       happy       0.81      0.86      0.84      5309
+     neutral       0.63      0.82      0.72      5183
+         sad       0.68      0.39      0.50      2614
+    surprise       0.66      0.68      0.67      1898
 
-   micro avg       0.74      0.74      0.74     18973
-   macro avg       0.71      0.65      0.67     18973
-weighted avg       0.74      0.74      0.74     18973
- samples avg       0.74      0.74      0.74     18973
+    accuracy                           0.69     18804
+   macro avg       0.67      0.58      0.60     18804
+weighted avg       0.69      0.69      0.68     18804
 
 
 
 Classification Report for model 5-layer_merged_dataset_balanced.keras for merged_dataset_balanced:
               precision    recall  f1-score   support
 
-           0       0.60      0.63      0.61      6000
-           1       0.58      0.46      0.51      6000
-           2       0.69      0.62      0.65      6000
-           3       0.77      0.83      0.80      6000
-           4       0.61      0.72      0.66      6000
-           5       0.56      0.55      0.55      6000
-           6       0.66      0.66      0.66      6000
+       angry       0.51      0.62      0.56      7000
+     disgust       0.56      0.44      0.49      7000
+        fear       0.61      0.44      0.51      7000
+       happy       0.73      0.82      0.77      7000
+     neutral       0.57      0.63      0.60      7000
+         sad       0.48      0.49      0.49      7000
+    surprise       0.63      0.65      0.64      7000
 
-   micro avg       0.64      0.64      0.64     42000
-   macro avg       0.64      0.64      0.64     42000
-weighted avg       0.64      0.64      0.64     42000
- samples avg       0.64      0.64      0.64     42000
-
+    accuracy                           0.58     49000
+   macro avg       0.58      0.58      0.58     49000
+weighted avg       0.58      0.58      0.58     49000
 
 
-Classification Report for model 5-layer_mma.keras for mma:
+
+Classification Report for model 5-layer_balanced_filtered_FER2013.keras for balanced_filtered_FER2013:
               precision    recall  f1-score   support
 
-           0       0.54      0.47      0.50       863
-           1       0.36      0.14      0.20       454
-           2       0.45      0.37      0.41       621
-           3       0.78      0.82      0.80      3952
-           4       0.63      0.76      0.69      4108
-           5       0.50      0.35      0.42      1663
-           6       0.64      0.61      0.63      1106
+       angry       0.60      0.48      0.54       454
+     disgust       0.57      0.71      0.63        56
+        fear       0.50      0.36      0.42       465
+       happy       0.87      0.79      0.83       852
+     neutral       0.51      0.74      0.60       563
+         sad       0.53      0.57      0.55       642
+    surprise       0.77      0.76      0.77       388
 
-   micro avg       0.65      0.65      0.65     12767
-   macro avg       0.56      0.50      0.52     12767
-weighted avg       0.64      0.65      0.64     12767
- samples avg       0.65      0.65      0.65     12767
-
+    accuracy                           0.64      3420
+   macro avg       0.62      0.63      0.62      3420
+weighted avg       0.65      0.64      0.63      3420
 
 
-Classification Report for model 5-layer_mma_balanced.keras for merged_dataset:
+
+Classification Report for model 5-layer_balanced_filtered_FER2013_aug.keras for balanced_filtered_FER2013_aug:
               precision    recall  f1-score   support
 
-           0       0.69      0.50      0.58      1680
-           1       0.50      0.15      0.23       757
-           2       0.71      0.48      0.57      1450
-           3       0.75      0.86      0.80      5356
-           4       0.59      0.75      0.66      5240
-           5       0.57      0.47      0.51      2580
-           6       0.67      0.59      0.62      1910
+       angry       0.59      0.37      0.46      1600
+     disgust       0.81      0.67      0.73      1600
+        fear       0.36      0.44      0.39      1600
+       happy       0.62      0.85      0.71      1600
+     neutral       0.53      0.61      0.57      1600
+         sad       0.44      0.39      0.41      1600
+    surprise       0.77      0.70      0.73      1600
 
-   micro avg       0.66      0.66      0.66     18973
-   macro avg       0.64      0.54      0.57     18973
-weighted avg       0.65      0.66      0.64     18973
- samples avg       0.66      0.66      0.66     18973
+    accuracy                           0.58     11200
+   macro avg       0.59      0.58      0.57     11200
+weighted avg       0.59      0.58      0.57     11200
+
+
+
+Classification Report for model YT_5_affectnet.keras for affectnet:
+              precision    recall  f1-score   support
+
+       angry       0.52      0.54      0.53       322
+     disgust       0.50      0.35      0.42       248
+        fear       0.61      0.22      0.32       317
+       happy       0.95      0.82      0.88       505
+     neutral       0.80      0.95      0.87       512
+         sad       0.47      0.55      0.51       309
+    surprise       0.47      0.68      0.55       404
+
+    accuracy                           0.64      2617
+   macro avg       0.62      0.59      0.58      2617
+weighted avg       0.65      0.64      0.63      2617
+
+
+
+Classification Report for model YT_5_merged_dataset.keras for merged_dataset:
+              precision    recall  f1-score   support
+
+       angry       0.56      0.59      0.57      1639
+     disgust       0.59      0.22      0.32       758
+        fear       0.66      0.28      0.39      1403
+       happy       0.83      0.82      0.83      5309
+     neutral       0.60      0.86      0.71      5183
+         sad       0.59      0.39      0.47      2614
+    surprise       0.66      0.64      0.65      1898
+
+    accuracy                           0.67     18804
+   macro avg       0.64      0.54      0.56     18804
+weighted avg       0.67      0.67      0.65     18804
+
+
+
+Classification Report for model YT_5_merged_dataset_balanced.keras for merged_dataset_balanced:
+              precision    recall  f1-score   support
+
+       angry       0.40      0.65      0.50      7000
+     disgust       0.59      0.21      0.31      7000
+        fear       0.47      0.33      0.38      7000
+       happy       0.75      0.74      0.75      7000
+     neutral       0.48      0.69      0.57      7000
+         sad       0.42      0.42      0.42      7000
+    surprise       0.63      0.58      0.60      7000
+
+    accuracy                           0.52     49000
+   macro avg       0.54      0.52      0.50     49000
+weighted avg       0.54      0.52      0.50     49000
+
+
+
+Classification Report for model YT_5_balanced_filtered_FER2013.keras for balanced_filtered_FER2013:
+              precision    recall  f1-score   support
+
+       angry       0.56      0.54      0.55       454
+     disgust       0.51      0.70      0.59        56
+        fear       0.51      0.30      0.38       465
+       happy       0.86      0.79      0.83       852
+     neutral       0.53      0.73      0.61       563
+         sad       0.54      0.55      0.55       642
+    surprise       0.75      0.81      0.78       388
+
+    accuracy                           0.64      3420
+   macro avg       0.61      0.63      0.61      3420
+weighted avg       0.64      0.64      0.63      3420
+
+
+
+Classification Report for model YT_5_balanced_filtered_FER2013_aug.keras for balanced_filtered_FER2013_aug:
+              precision    recall  f1-score   support
+
+       angry       0.48      0.53      0.50      1600
+     disgust       0.88      0.66      0.75      1600
+        fear       0.43      0.25      0.31      1600
+       happy       0.72      0.80      0.75      1600
+     neutral       0.48      0.73      0.58      1600
+         sad       0.45      0.42      0.44      1600
+    surprise       0.76      0.77      0.77      1600
+
+    accuracy                           0.59     11200
+   macro avg       0.60      0.59      0.59     11200
+weighted avg       0.60      0.59      0.59     11200
