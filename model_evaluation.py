@@ -66,8 +66,8 @@ for model_name, data_folder in model_to_data_folder.items():
 
     # Wygenerowanie raportu klasyfikacji
     report = classification_report(y_test, y_pred, target_names=labels)
-    
-    print(model_name)
+
+    print(f'{model_name} done')
 
     print(f"\n\nClassification Report for model {model_name} for {data_folder.replace('input/','')}:", file=open(OUTPUT_FILE, 'a'))
     print(report, file=open(OUTPUT_FILE, 'a'))
